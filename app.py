@@ -13,12 +13,11 @@ from train_model import train_fx_model
 def classify_text(sentence):
     '''
     Classify text to different categories using trained ML model
-    {'business': 0, 'tech': 1, 'politics': 2, 'entertainment': 3}
     :param
     sentence(str): Input text
 
     :return
-    prediction(dict): Dictionary containing the result of classification
+    prediction(dict): Dictionary containing the category of classification
     '''
     # Train the model if pretrained Completed_model.joblib file is missing
     #train_fx_model()
