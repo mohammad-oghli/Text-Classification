@@ -10,7 +10,7 @@ Text classification according to the following main categories:
 
 It will extract features from text and classify it using pretrained machine learning model on **BBC News** articles dataset. 
 
-Example
+**Example**
 
 text = "The next Prime Minister will not be elected by the British public"
 
