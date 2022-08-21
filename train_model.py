@@ -8,10 +8,10 @@ import joblib
 
 
 def extract_words(str, n):
-    words = str.split()
     c = 0
     s_arr = []
     res = ""
+    words = str.split()
     for w in words:
         res += w + " "
         c += 1
