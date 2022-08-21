@@ -50,6 +50,7 @@ it will return
 
 Function `st_ui` included in the app to render the user interface of the application endpoints.
 
-For more info check Daisi documentation: 
+For more info check Daisi documentation:
+
 https://doc.daisi.io/
 
