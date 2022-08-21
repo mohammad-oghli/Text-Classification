@@ -12,13 +12,13 @@ It will extract features from text and classify it using pretrained machine lear
 
 **Example**
 
-text = "The next Prime Minister will not be elected by the British public"
+`text = "The next Prime Minister will not be elected by the British public"`
 
 Classifying this text will return **Politics**.
 
-text = "Currently, when switching a Wear OS smartwatch to a new Android smartphone, users are required to factory reset the watch."
+`text = "Currently, when switching a Wear OS smartwatch to a new Android smartphone, users are required to factory reset the watch."`
 
-Also this text will return **Technology**.
+Also, this text will return **Technology**.
 
 ### How to call it
 
