@@ -9,6 +9,15 @@ from sklearn.linear_model import LogisticRegression
 import joblib
 from train_model import train_fx_model
 
+# Global data set preprocessing
+df = pd.read_csv(r"BBC News Train 4 Categories.csv")
+df['category_id'] = df['Category'].factorize()[0]
+category_id_df = df[['Category', 'category_id']].drop_duplicates().sort_values('category_id')
+category_to_id = dict(category_id_df.values)
+id_to_category = dict(category_id_df[['category_id', 'Category']].values)
+tfidf = TfidfVectorizer(sublinear_tf=True, min_df=5, norm='l2', encoding='latin-1', ngram_range=(1, 2),
+                        stop_words='english')
+features = tfidf.fit_transform(df.Text).toarray()
 
 def classify_text(sentence):
     '''
@@ -21,14 +30,6 @@ def classify_text(sentence):
     '''
     # Train the model if pretrained Completed_model.joblib file is missing
     #train_fx_model()
-    df = pd.read_csv(r"BBC News Train 4 Categories.csv")
-    df['category_id'] = df['Category'].factorize()[0]
-    category_id_df = df[['Category', 'category_id']].drop_duplicates().sort_values('category_id')
-    category_to_id = dict(category_id_df.values)
-    id_to_category = dict(category_id_df[['category_id', 'Category']].values)
-    tfidf = TfidfVectorizer(sublinear_tf=True, min_df=5, norm='l2', encoding='latin-1', ngram_range=(1, 2),
-                            stop_words='english')
-    features = tfidf.fit_transform(df.Text).toarray()
     filename = "Completed_model.joblib"
     loaded_model = joblib.load(filename)
     # category to id

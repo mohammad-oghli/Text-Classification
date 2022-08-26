@@ -21,7 +21,7 @@ def extract_words(str, n):
             res = ""
     return s_arr
 
-
+# Train the model on BBC News data set
 def train_fx_model():
     df = pd.read_csv(r"BBC News Train 4 Categories.csv")
     df['category_id'] = df['Category'].factorize()[0]
