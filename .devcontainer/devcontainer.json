@@ -1,0 +1,28 @@
+{
+    // image being used
+   "image": "mcr.microsoft.com/devcontainers/universal:2",
+  // set minimum cpu
+   "hostRequirements": {
+       "cpus": 4
+   },
+   // install dependencies and start app
+   "updateContentCommand": "pip install -r requirements.txt",
+   "postAttachCommand": "python -m streamlit run app.py --server.enableCORS false --server.enableXsrfProtection false",
+   // open app.tsx once container is built
+   "customizations": {
+       "codespaces": {
+           "openFiles": [
+               "app.py"
+           ]
+       },
+       // install some vscode extensions
+       "vscode": {
+           "extensions": [
+               "ms-python.python",
+               "ms-toolsai.jupyter",
+               "ms-azuretools.vscode-docker",
+               "gencay.vscode-chatgpt"
+           ]
+       }
+   }
+}
