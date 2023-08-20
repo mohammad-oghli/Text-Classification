@@ -20,7 +20,7 @@ Classifying this text will return **Politics**.
 
 Also, this text will return **Technology**.
 
-### How to call it
+## How to call it
 
 * Load the Daisi
 <pre>
